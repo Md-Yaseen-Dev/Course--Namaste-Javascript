@@ -61,7 +61,7 @@ function getName(){
 **Using arrow function**
 ```javascript
 
-getName(); // undefined-- because is stored as a variable
+getName; // undefined-- because it is stored as a variable
 console.log(x); // undefined
 console.log(getName);
 
@@ -75,7 +75,7 @@ var getName = ()=>{
 
 ```javascript
 
-getName(); // undefined -- because is stored as a variable
+getName ; // undefined -- because it is stored as a variable
 console.log(x); // undefined
 console.log(getName);
 
@@ -84,3 +84,41 @@ var getName = function () {
   console.log("Namste javascript")
 }
 ```
+---
+
+**How functions work in js & variable enivornment**
+
+```javascript
+var x = 1;
+a();
+b();
+console.log(x);
+
+function a(){
+  var x =10;
+  console.log(x)
+}
+
+function b(){
+  var x =100;
+  console.log(x)
+}
+
+```
+
+In global Execution context
+
+* on line 1 - x is undefined ;
+* on line 2 - x is 1 and a() pushed into call-stack . a() will create a new execution context in global memory
+here in the local memory on first line x will be undefined . in second line x declared to 10 and third line it will go to  console and print x =10; after that a() is poped from call stack, so execution context will be deleted.
+* on line 3 - b() is pushed into call-stack . b() will create a new execution context in global memory. here in the local memory first line x will be undefined . In second line x declared to 100 . and third line it will go to console and print x = 100 after that b() is poped from call stack, so execution context will be deleted
+
+* on line- 4  on global it prints console.log(x) // 1
+
+Note:- after console of everything execution context and call stacks are deleted.
+**result of function**
+10
+100
+1
+
+---
