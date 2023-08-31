@@ -122,3 +122,66 @@ Note:- after console of everything execution context and call stacks are deleted
 1
 
 ---
+
+
+## Shortest Js Program window & this keyword
+
+* An empty js file is known as shortest js.
+
+* In these empty js file when we do debugging, the global memory is working, it sounds weired right.
+
+* here in global memory - window object is automatically is stored in stack. 
+
+* And here this defines the window-object.
+
+
+```javascript
+var a ="0";
+function b(){
+var x =10;
+console.log(x)
+}
+```
+
+- If we create variable inside the function. just like x . it is not in global space.
+
+Note:- Do you want to Know? how it is working? write window in console.
+
+
+---
+
+## Undefined vs Not defined in JS.
+
+```javascript
+var a = 7 ;
+console.log(x);
+```
+we created a variable . so in global memory it is allocated before we call the variable.
+
+- Go to debugger and check a is undefined. 
+
+- "a" will be reserved memory. when you try to console then it shows result as  undefined.
+
+
+-  Here "x" is not allocated to memory , so it is not defined. so console shows error(refernce error)
+
+**Note undefined !== Empty**
+
+
+```javascript
+var a ;
+
+if(a === undefined){
+
+  console.log("this is undefined")
+}
+else{
+  console.log("this is not undefined")
+}
+
+
+```
+
+---
+
+## The Scope Chain, scope and lexical enivornment.
