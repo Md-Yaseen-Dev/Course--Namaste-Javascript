@@ -48,8 +48,8 @@ Hoisting is a phenomenon in javascript.By the default it access even before inti
 **Exper:-** When we create a variable and declare it. it is stored in a execution context before intialization is called hoisting. if we dont decalre but want to call the variable it shows reference error coz, it is not stored in execution context.
 ```javascript
 
-getName();
-console.log(x); // undefined
+getName(); // Namste javascript
+console.log(x); // not defined
 console.log(getName);
 
 function getName(){
@@ -62,7 +62,7 @@ function getName(){
 ```javascript
 
 getName; // undefined-- because it is stored as a variable
-console.log(x); // undefined
+console.log(x); // not defined
 console.log(getName);
 
 var getName = ()=>{
@@ -76,7 +76,7 @@ var getName = ()=>{
 ```javascript
 
 getName ; // undefined -- because it is stored as a variable
-console.log(x); // undefined
+console.log(x); // not defined
 console.log(getName);
 
 var getName = function () {
@@ -90,8 +90,8 @@ var getName = function () {
 
 ```javascript
 var x = 1;
-a();
-b();
+a(); //  10;
+b(); // 100;
 console.log(x);
 
 function a(){
@@ -185,3 +185,89 @@ else{
 ---
 
 ## The Scope Chain, scope and lexical enivornment.
+
+**Lexical Enivornment**:- lexical enivornment is created when execution context is created. lexical enivornment is nothing but which we can access refernce of parent scope or global scope.
+**For global scope lexical enivornment will be null. coz of no parent**
+
+In simple words:- lexical enivornment is a local memory along with lexical enivornment parent.
+
+
+```javascript
+function a(){
+  console.log(b);
+}
+let b = 10;
+a();
+```
+
+**Scope : -** scope means where we can access function or variable in our code 
+
+
+**scope chain :-** The mechanism of lexical enivornment is known as scope chain.
+
+---
+
+
+## let and const in js Temporal dead zone.
+
+Let and const are two block scoped variable. They store in the different memory location known as block scope or script.
+
+
+**we think that let and const doesn't hoist ?** It's absoultly wrong . they hoist in differnent memory location. but they dont show in console due to Temporal dead zone (tdz error)
+
+
+**Temporal dead Zone :-** tdz is nothing but time between hoisting to intalization.
+
+
+**let and const are hoisted but it get error because of temporal dead zone. it will stop to access until it is intalizee**
+
+**Note:-**
+
+- let cannot be redecalre but we can reassign.
+- const cannot be redecalre and reassign.
+
+---
+
+
+## Closures
+
+
+**closure:-** closure is a function in lexcial enivornment and remembers even the function is executed outside the lexical scope.
+
+
+```javascript
+function outer(){
+
+    var a = 10;
+     function inner(){
+     console.log(a)
+    }
+    a=100;
+    return inner;
+}
+
+const close = outer();
+console.log(close); // see here the function is closed.
+
+// by calling close variable we can access inner function. as shown below:
+
+close(); // it returns the refernce of a i.e 100. 
+
+```
+
+
+**Uses of Closures**
+
+- modules design pattern
+- currying
+- functions like once
+- memorize
+- maintaining state in async world
+- setTimeouts
+- Iterators
+- and many more...
+
+
+---
+
+## setTimeOut
