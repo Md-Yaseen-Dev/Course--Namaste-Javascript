@@ -267,7 +267,11 @@ close(); // it returns the refernce of a i.e 100.
 - Iterators
 - and many more...
 
+**Disadvantages of closures**
 
+- In closures overconsumption of memory
+- It ensures lot or memory space.
+- And sometimes the variables collected with garbage values.
 ---
 
 ## setTimeOut
