@@ -275,3 +275,64 @@ close(); // it returns the refernce of a i.e 100.
 ---
 
 ## setTimeOut
+
+```javascript 
+function x(){
+
+    for(var i=1;i <=5;i++){
+    setTimeout(function(){
+        console.log(i)
+    }, i * 1000)
+}
+}
+
+x();
+```
+
+Here, the above example it prints 6 for 5 times. because the Timer is running behind before that the for loop will run and complete. it means in lexical behaviour the value will of i is 6 . it print 6 for 5 times.  after 1000 millsec it is printing i =6 because of closures the function of lexical behaviour i refernce will be 6 so here it is printing 6 for every loop. The loop is working through values but it returns their refernces of i and they dont change when it iterates.
+
+
+```javascript
+
+
+function y(){
+
+    for(let i=1;i <5;i++){
+     
+    setTimeout(function(){
+        console.log(i)
+    }, i * 100)
+}
+}
+
+y(); 
+// 1
+// 2
+// 3
+// 4
+
+```
+when we use let variable it will run 1,2,3,4,5. because let is a block scope where it iterates the loop with a new reference.
+
+**To reslove the issue using var we have to use closures**
+
+```javascript
+function x(){
+
+    for(var i=1;i <=5;i++){
+
+      function closures(a)
+    setTimeout(function(){
+        console.log(a)
+    }, a * 1000)
+}
+closures(i);
+}
+x(); 
+// 1
+// 2
+// 3
+// 4
+```
+
+---
