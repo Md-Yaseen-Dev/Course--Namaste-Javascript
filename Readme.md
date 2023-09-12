@@ -336,3 +336,9 @@ x();
 ```
 
 ---
+
+## Function class functions
+
+
+### Function statement : 
+
