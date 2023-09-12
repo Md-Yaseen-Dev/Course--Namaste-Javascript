@@ -72,16 +72,16 @@ y(); // after 100 millsec it is printing i =5 because of closures the function o
 
 // Note when u use let variable it will run 1,2,3,4,5. because let is a block scope where it iterates the loop with a new reference.
 
-// function x(){
+function x(){
 
-//     for(var i=1;i <=10;i++){
-//         function closure(a){
-//     setTimeout(function(){
-//         console.log(a)
-//     }, a * 1000)
-// }
+    for(var i=1;i <=10;i++){
+        // function closure(a){
+    setTimeout(function(){
+        console.log(i)
+    }, i * 1000)
+}
 // closure(i)
-// }
+}
 // }
 
-// x(); // after 1 sec it will print.
+x(); // after 1 sec it will print.
