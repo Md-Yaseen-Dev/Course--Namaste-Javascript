@@ -421,3 +421,46 @@ Note:- In arguments we can pass anonoymous function or named function is called 
 ---
 
 
+## Callback function 
+
+Callback functions are very powerful in javascript. it gives access to synchronous threaded language.
+
+
+```javascript
+
+function x(){
+
+}
+
+x(function y(){
+
+
+}) // calling function here y is called callback function
+
+
+
+
+```
+**how to use callback function in asynchronous task**
+
+
+```javascript
+
+setTimeout(function(){
+
+},5000)
+```
+
+**callback function in closures**
+```javascript
+function attachEventListeners(){
+  let count = 0;
+  document.getElementById("clickMe").addEventListners("click", function xyz(){
+    console.log("button clicked", ++count);
+  })
+}
+attachEventListeners();
+```
+
+**imp: Garbage collection and removeListeners :**
+In this case we can't free up the extra memory because EventListeners are heavy . So we remove the addEventlisteners when we are not using them.
