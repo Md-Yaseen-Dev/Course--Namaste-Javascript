@@ -340,5 +340,84 @@ x();
 ## Function class functions
 
 
-### Function statement : 
+**Function statement :**  A function statement is also known as function declaration or function defintion is made of function keyword, followed by an obligatory function name, a list of parameters in a pair of parenthesis and a pair of curly braces that delimits the body code.
+
+```javascript
+function a(){
+  console.log("a called")
+}
+a();
+```
+
+**Function expression :** A function doesn't start with function keyword is known as function expression. And a value intalizing to function.
+
+```javascript
+var b = function (){
+  console.log("b called");
+}
+b(); // b called
+```
+
+when we use hoisting a() and b() . b() gets error.because this b is treated as an other variable. so it results reference error(not defined)
+
+
+**Anynomous function:** A function with no name is known as anynomous function. anononymous looks like function statement. According to ecmascript function should have a name.
+
+```javascript
+
+function (){
+  console.log("Anonymous function")
+}
+
+```
+
+Note:- Anonoymous function are used in a place where it is used as values. so in function statements you cannot use anoynomous function
+
+
+**Named function expression:-** Named function expression are same as function expression but instead of using anoynomous function we can use named function.
+
+```javascript
+
+var c = function xyz(){
+
+  console.log("this is Named function expression")
+}
+c(); // this is Named function expression
+
+xyz() // undefined
+```
+*Corner case :* we cann't call named function expression it result undefined. This  xyz is not created in outer scope.
+
+
+**Difference between Parameters and Arguments**
+
+*Parameters:-* Parameters are variables in the local scope of a function. you can call it as label/identifers.
+
+*Argument:-* Argument are values of a parameters/variable.
+
+```javascript
+var d = function(param1){
+  console.log(param1);
+}
+d(10)// 10
+
+```
+
+**First Class function:-** The ability to use function as values is called First class function.
+
+```javascript
+var d = function(param1){
+  console.log(param1);
+}
+
+function xyz(){
+
+}
+d(xyz) // function xyz(){}
+
+```
+Note:- In arguments we can pass anonoymous function or named function is called as first class function or first class citizen.
+
+---
+
 
