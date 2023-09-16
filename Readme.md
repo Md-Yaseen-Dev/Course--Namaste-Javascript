@@ -464,3 +464,8 @@ attachEventListeners();
 
 **imp: Garbage collection and removeListeners :**
 In this case we can't free up the extra memory because EventListeners are heavy . So we remove the addEventlisteners when we are not using them.
+
+---
+
+## Event Loop
+
