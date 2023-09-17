@@ -505,3 +505,35 @@ console.log("End");
 
 **Note: Event loop acts a getkeeper from one queue to callstack.**
 
+
+Ex:2
+
+```javascript
+
+console.log("start");
+setTimeOut(function chT(){
+  console.log("cB setTimeOUt");
+
+},5000);
+fetch("http:// api.netflix.com").then(function cbF(){
+  console.log("cB Netflix")
+});
+console.log("End")
+
+//Output
+//start
+//End
+// cB Netflix
+// cB SetTImeout
+```
+
+- here above example fetch has promises so it moves to microtask queue.
+
+- which is higher priority than callback queue so it moves first in callstack compare to setTimeOut().
+
+*Note:* Microtask have higher priority compare to callback queue.
+
+
+**Starvation:** If microtask queue creates inside another microtask queue. and inside another , so it doesn't give chance for a long time to callback queue is known as starvation.
+
+
