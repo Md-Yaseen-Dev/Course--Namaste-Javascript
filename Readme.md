@@ -469,3 +469,39 @@ In this case we can't free up the extra memory because EventListeners are heavy 
 
 ## Event Loop
 
+**Web API's**
+- SetTimeOut()
+- Dom APIs
+- fetch()
+- Local storage
+- console
+- location
+
+This are SuperPower of browser.
+
+*Note:* these are not found in javascript engine.
+
+
+Ex:- when we want to run time we use setTimeOut superpower in browser to run behind. actually doesn't have this super in js engine
+
+```javascript
+
+console.log("start");
+setTimeOut(function cb(){
+  console.log("callback");
+},5000)
+console.log("End");
+
+// output
+
+// start
+// End
+// callback
+```
+
+- here above example setTImeout has a timer it will be running in browser . when it completes the time in the browser then it will move to callback queue.
+
+- when the call stack get empty then with the help of event loop callback queue is poped and pushed into callstack
+
+**Note: Event loop acts a getkeeper from one queue to callstack.**
+
