@@ -536,4 +536,45 @@ console.log("End")
 
 **Starvation:** If microtask queue creates inside another microtask queue. and inside another , so it doesn't give chance for a long time to callback queue is known as starvation.
 
+---
 
+## Js - Engine Exposed
+
+
+- Js is everywhere. Js can run in browser, server, smart watches, bulbs and robots. these are possible in runtime enivornment.
+
+- Basically javascript engine is a heart of javascript runtime enivornment
+
+- javascript have api they are same but they work different in browsers and Node.js
+
+**ECMASCRIPT**
+
+ Javascript has many engines they are:
+  - chakra : A javascript engine used in microsoft edge.
+  - v8 : A javascript engine used in google chrome and node.js, VB.Net & Dena.
+  - spiderMonkey : Javascript engine in mozilla firefox.
+
+  -  **Note:- The first js-engine is spiderMonkey created by Breden Eich**
+
+
+**Js-Arichtecture**
+
+1. **Parsing** : In parsing which you write code which is broken in tokens.The syntax of parser will be in abstract syntax tree.
+   - Ex:- let a = 7 ; 
+     1. let 
+     2. a
+     3. = 
+     4.  7
+
+
+2. **Compilation** : In javascript it uses interpreter and compiler. it is a JIT compilation (Just IN TIME).
+
+- interpreter is nothing but it is executed line by line
+- compiler is nothing but whole code is compiled before execution
+- interpreter runs very fast
+- compiler has more efficency.
+
+
+3. **Execution**: It creates a execution context for every variable . that are stored in memory heap and call stack.
+
+---
