@@ -45,7 +45,7 @@ var square4 = square(4);
 
 Hoisting is a phenomenon in javascript.By the default it access even before intialized it . (by default to the top of the scope)
 
-**Exper:-** When we create a variable and declare it. it is stored in a execution context before intialization is called hoisting. if we dont decalre but want to call the variable it shows reference error coz, it is not stored in execution context.
+**Expert:-** When we create a variable and declare it. it is stored in a execution context before intialization is called hoisting. if we dont decalre but want to call the variable it shows reference error coz, it is not stored in execution context.
 ```javascript
 
 getName(); // Namste javascript
@@ -578,3 +578,28 @@ console.log("End")
 3. **Execution**: It creates a execution context for every variable . that are stored in memory heap and call stack.
 
 ---
+
+## Trust issue of setTImeOut()
+
+Ex:-
+
+```javascript
+console.log("start");
+setTimeOut(function cb(){
+  console.log("cb callback");
+},0);
+console.log("End");
+
+//Output
+// start
+// End
+// cb callback
+
+
+```
+
+**Note :-** when setTimeout has taken 0 sec even through it will not execute immediately. because it will move to callback queue. and wait for eventloop to call. the eventloop will wait until the global execution context is popedout. so even thought setTImeout will complete at 0 sec. and global execution context completes at 10 sec. it will execute after the global execution is poped out.
+
+---
+
+
