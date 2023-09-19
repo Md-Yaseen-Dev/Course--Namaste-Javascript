@@ -602,4 +602,101 @@ console.log("End");
 
 ---
 
+## Higher order function
 
+A function which takes another function input to itself and returns funtion itself is known as higher orfer function.
+
+
+**Don't repeat yourself**
+
+Ex:
+
+```javascript
+
+// Dont repeat yourself
+const radius = [3,4,1,2];
+
+1. const calculateCircumfernce = function radius(){
+  const output = [];
+  for(let i=0; i < radius.length; i++){
+
+    output.push(2 * Math.PI * radius);
+
+  }
+  return output;
+}
+
+console.log(calculatecircumference(radius));
+
+2. const calculateDiameter = function radius(){
+  const output = [];
+  for(let i=0; i < radius.length; i++){
+
+    output.push(2 * radius);
+
+  }
+  return output;
+}
+
+console.log(calculateDiameter(radius));
+
+
+```
+
+Write the code without repeating 
+
+```javascript
+
+// circumference
+const radius = [3,4,1,2];
+
+const circumference = function(radius){
+  return 2* Math.PI * radius
+}
+
+const diameter = function(radius){
+
+  return 2* radius;
+}
+
+const calculate = function(radius,logic){
+  const output = [];
+  for(let i=0; i < radius.length; i++){
+
+    output.push(logic[radius[i]]);
+
+  }
+  return output;
+}
+
+
+```
+**map is a higher order function**
+
+```javascript
+
+// we can do directly
+const radius = [3,4,1,2];
+
+const circumference = function(radius){
+  return 2* Math.PI * radius
+}
+
+console.log(radius.map(circumference));
+
+
+//  we can create map manually using Array.Prototype
+
+
+
+Array.prototype.calculate = function(logic){
+  const output = [];
+  for(let i=0; i < this.length; i++){
+
+    output.push(this.[i]);
+
+  }
+  return output;
+}
+console.log(radius.calculate(circumfernce));
+```
