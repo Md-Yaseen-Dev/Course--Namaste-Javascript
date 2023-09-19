@@ -82,6 +82,20 @@ function x(){
 }
 // closure(i)
 }
-// }
 
-x(); // after 1 sec it will print.
+
+// x(); // after 1 sec it will print.
+
+
+// ---------------------callback function-----------------
+// let count =0;
+// document.getElementById("clickMe")
+// .addEventListener("click", function xyz() {console.log("button clicked")});
+
+function attachEventListeners(){
+    let count = 0;
+    document.getElementById("clickMe").addEventListener("click", function xyz(){
+      console.log("button clicked", ++count);
+    })
+  }
+  attachEventListeners();
