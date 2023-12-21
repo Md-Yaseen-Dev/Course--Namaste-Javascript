@@ -2,7 +2,7 @@
 
 ## How Javascript works
 
-_Everthing in javascript happens inside an **Execution Context**_
+_Everything in javascript happens inside an **Execution Context**_
 
 Execution is a big box or container that is stored inside it.
 
